@@ -5,27 +5,27 @@ import core.ASCII_Animation;
 /**
 * @see
 * @author Al_assad yulinying_1994@outlook.com
-* @date 2016Äê11ÔÂ17ÈÕ ÏÂÎç10:53:09
+* @date 2016å¹´11æœˆ17æ—¥ ä¸‹åˆ10:53:09
 * @version V1.0  
-* Description:²âÊÔ×Ö·û»­¶¯»­Àà
+* Description:æµ‹è¯•å­—ç¬¦ç”»åŠ¨ç”»ç±»
 */
 
 public class ASCII_AnimationTest {
 
 	public static void main(String[] args){
 		
-		/*ÎŞbgm¶¯»­ ASCII_Animation(int fps,String imgpath);
-		 * fps:Ã¿ÃëÖ¡Êı£»
-		 * imgpath£º×Ö·û»­ÎÄ¼şÄ¿Â¼
+		/*æ— bgmåŠ¨ç”» ASCII_Animation(int fps,String imgpath);
+		 * fps:æ¯ç§’å¸§æ•°ï¼›
+		 * imgpathï¼šå­—ç¬¦ç”»æ–‡ä»¶ç›®å½•
 		*/
-//		new ASCII_Animation(15,"./bit img");
+		new ASCII_Animation(15,"./bit img");
 		
-		/*ÎŞbgm¶¯»­ ASCII_Animation(int fps,String imgpath£¬String bgmPath);
-		 * fps:Ã¿ÃëÖ¡Êı£»
-		 * imgpath£º×Ö·û»­ÎÄ¼şÄ¿Â¼
-		 * bgmPath£º±³¾°ÒôÀÖÂ·¾¶
+		/*æ— bgmåŠ¨ç”» ASCII_Animation(int fps,String imgpathï¼ŒString bgmPath);
+		 * fps:æ¯ç§’å¸§æ•°ï¼›
+		 * imgpathï¼šå­—ç¬¦ç”»æ–‡ä»¶ç›®å½•
+		 * bgmPathï¼šèƒŒæ™¯éŸ³ä¹è·¯å¾„
 		*/
-		new ASCII_Animation(15,"./bit img","./bgm/¼«ÀÖ¾»ÍÁ.wav");
+		new ASCII_Animation(15,"./bit img","./bgm/æä¹å‡€åœŸ.wav");
 		
 	}
 
