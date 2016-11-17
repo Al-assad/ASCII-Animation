@@ -1,4 +1,4 @@
-package demo;
+package core;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -19,9 +19,19 @@ import javax.imageio.ImageIO;
 
 public class ImageProcesser  {
 	
-//	private static char[] charset = {'M','8','V','|','.',' '};   //字符画素材集
-	private static char[] charset = {'M','8','V','|',':','.',' '};   //字符画素材集
+	private static final char[] charset1 = {'M','8','V','|',':','.',' '};   //默认字符素材集
+	private char[] charset;   //字符画素材集
 	private String imgString = "";   //储存转化后的字符串
+	
+	
+	//使用指定字符集构造
+	public ImageProcesser(char[] charset){
+		this.charset = charset;
+	}
+	//使用默认字符集构造
+	public ImageProcesser(){
+		this.charset = charset1;
+	}
 	
 	public String getImgString(){
 		return imgString;
@@ -122,12 +132,6 @@ public class ImageProcesser  {
 		
 	}
 	
-	
-/*	//test
-	public static void main(String [] rags){
-		batchImgFile("./src img","./bit img");
-		
-	}*/
-	
+
 
 }

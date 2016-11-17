@@ -1,4 +1,4 @@
-package demo;
+package core;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -18,12 +18,32 @@ import java.util.concurrent.*;
 public class ASCII_Animation {
 	
 	final int fps;   //帧率
-	public ASCII_Animation(){
-		this(15,"./bit img");
-	}
-	//构造方法，同时控制打印帧率
+
+	//构造方法，提供帧数，输入文件路径参数，无bgm
 	public ASCII_Animation(int fps,String bitImgPath){	
 		this.fps = fps;
+		displayAnimation(bitImgPath);
+	}
+	
+	//构造方法，提供帧数，输入文件路基，bgm路径参数
+	public ASCII_Animation(int fps,String bitImgPath,String bgmPath){	
+		this.fps = fps;
+		new Thread(new Runnable(){
+			public void run(){
+				displayAnimation(bitImgPath);
+			}
+		}).start();
+		new Thread(new Runnable(){
+			public void run(){
+				new MusicPlayer(bgmPath).start(true);
+			}
+		}).start();
+	
+		
+	}
+	
+	//开始播放动画
+	private void displayAnimation(String bitImgPath){
 		try{
 			int size = new File(bitImgPath).listFiles().length;
 			for(int i=0;i<size;i++){
@@ -35,6 +55,8 @@ public class ASCII_Animation {
 			ex.printStackTrace();
 		}
 	}
+
+	
 	
 	//从文件对象中读取字符串，并打印到控制台
 	private void printImg(File imgfile){
@@ -49,13 +71,14 @@ public class ASCII_Animation {
 				sb.append(str+'\n');
 			in.close();
 			System.out.println(sb);
-			System.out.println("\n\n\n");
+	
 			
 		}catch(IOException ex){
 			ex.printStackTrace();
 		}
 		
 	}
+	
 	
 
 	//清空控制台
@@ -75,9 +98,6 @@ public class ASCII_Animation {
 		
 	}
 	
-/*	//Test
-	public static void main(String[] args){
-		new ASCII_Animation(15,"./bit img");
-	}*/
+
 
 }
