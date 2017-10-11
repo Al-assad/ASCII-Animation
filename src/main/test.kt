@@ -9,6 +9,6 @@ import core.MusicPlayer
  * Description:
  */
 fun main(args: Array<String>) {
-    Thread(Runnable { MusicPlayer("./bgm/AIaho.wav").start(true) }).start()
-    Thread.sleep(50000)
+    println("hello world")
+
 }

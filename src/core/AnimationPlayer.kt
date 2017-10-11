@@ -26,8 +26,8 @@ class AnimationPlayer {
     }
     constructor(fps:Int,bitImgPath:String,bgmPath:String){
         this.fps = fps
-        Thread(Runnable { MusicPlayer(bgmPath).start(false) }).start()
         Thread(Runnable { displayAnimation(bitImgPath)}).start()
+        Thread(Runnable { MusicPlayer(bgmPath).start(false) }).start()
 
     }
 
@@ -36,8 +36,13 @@ class AnimationPlayer {
         try {
             val size = File(bitImgPath).listFiles()!!.size
             for (i in 0..size - 1) {
-                printImg(File("$bitImgPath/$i.txt"))
-                TimeUnit.MILLISECONDS.sleep((1000.0/fps).toLong())
+                var frame = getAsciiStr(File("$bitImgPath/$i.txt"))
+
+                PrintFrame.print(frame,fps)
+
+               /* TimeUnit.MILLISECONDS.sleep((1000.0/fps).toLong())
+                //清空控制台
+                PrintFrame.cls()*/
             }
         } catch (ex: InterruptedException) {
             ex.printStackTrace()
@@ -46,24 +51,24 @@ class AnimationPlayer {
     }
 
     //从文件对象中读取字符串，并打印到控制台
-    private fun printImg(imgfile: File) {
+    private fun getAsciiStr(imgfile: File):String {
         if (!imgfile.isFile)
-            return
-
+            return ""
+        val sb = StringBuilder("")
         try {
             val input = BufferedReader(FileReader(imgfile))
-            val sb = StringBuilder()
-            var str = input.readLine();
+
+            var str = input.readLine()
             while (str != null){
                 sb.append(str+"\n")
                 str = input.readLine()
             }
             //打印字符画
-            println(sb)
             input.close()
         } catch (ex: IOException) {
             ex.printStackTrace()
         }
+        return sb.toString()
     }
 
 
