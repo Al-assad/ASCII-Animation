@@ -20,7 +20,7 @@ public class ASCII_AnimationTest {
 		*/
 		new ASCII_Animation(15,"./bit img");
 		
-		/*无bgm动画 ASCII_Animation(int fps,String imgpath，String bgmPath);
+		/*含bgm动画 ASCII_Animation(int fps,String imgpath，String bgmPath);
 		 * fps:每秒帧数；
 		 * imgpath：字符画文件目录
 		 * bgmPath：背景音乐路径
