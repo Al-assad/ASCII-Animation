@@ -9,5 +9,5 @@ import core.ImageConveter
  * Description: 步骤1：将图片文件批处理为字符画文件
  */
 fun main(args: Array<String>) {
-    ImageConveter.batchImgFile("./resource/AIaho-30fps","./material-30fps");
+    ImageConveter.batchImgFile("./resource/AIaho-15fps","./material-15fps");
 }
