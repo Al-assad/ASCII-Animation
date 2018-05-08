@@ -6,5 +6,5 @@
 
 #### 一个编译好的demo jar，运行环境：jre1.8+  
 
-<a href="http://pan.baidu.com/s/1eS1rK90" target="_blank">百度云盘，验证码 x61p</a><br/>
+<a href="http://pan.baidu.com/s/1eS1rK90" target="_blank">百度云盘链接，验证码 x61p</a><br/>
 
